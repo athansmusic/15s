@@ -30,8 +30,8 @@ window.EPISODES = [
   {
     n: 1,
     date: "2026-09-30",
-    title: "The Case of the Missing First Episode",
-    blurb: "Somebody has stolen Case File #001. It was fifteen seconds long. It WILL be found. (This is a placeholder: replace me with the real one.)",
+    title: "no ep",
+    blurb: "",
     src: "",
   },
 ];
