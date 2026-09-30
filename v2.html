@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>15 Second Mysteries</title>
+<script src="episodes.js"></script>
+</head>
+<body>
+<h1>15 Second Mysteries</h1>
+<p>A podcast. Each episode is 15 seconds.</p>
+<p>Today's episode: <span id="ep">none yet</span></p>
+<p>Listen: <span id="links"></span></p>
+<p>Snake (15 seconds):</p>
+<canvas id="snake" width="240" height="240" style="border:1px solid #000"></canvas>
+<p>time: <span id="snake-time">15</span> score: <span id="snake-score">0</span> <button id="snake-start">play</button></p>
+<p><a href="index.html" id="v1">v1</a></p>
+<script>
+(function () {
+  var t = new Date(), today = t.getFullYear() + "-" + String(t.getMonth() + 1).padStart(2, "0") + "-" + String(t.getDate()).padStart(2, "0");
+  var out = (window.EPISODES || []).filter(function (e) { return e.date <= today; }).sort(function (a, b) { return a.date < b.date ? 1 : -1; })[0];
+  if (out) document.getElementById("ep").innerHTML = out.n + ". " + out.title.replace(/</g, "&lt;") + (out.src ? ' (<a href="' + out.src.replace(/"/g, "") + '">listen</a>)' : "");
+  var L = window.LINKS || {}, names = { spotify: "Spotify", apple: "Apple Podcasts", youtube: "YouTube", rss: "RSS", kickstarter: "Kickstarter" }, parts = [];
+  for (var k in names) if (L[k]) parts.push('<a href="' + L[k] + '">' + names[k] + "</a>");
+  document.getElementById("links").innerHTML = parts.length ? parts.join(", ") : "coming soon";
+  document.getElementById("v1").addEventListener("click", function () { try { localStorage.setItem("ver", "1"); } catch (e) {} });
+})();
+</script>
+<script src="snake.js"></script>
+</body>
+</html>

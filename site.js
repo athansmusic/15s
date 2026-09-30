@@ -154,7 +154,7 @@
       });
     },
 
-    boot: function () { this.fill(); this.countdown(); this.counter(); this.titleScroll(); this.sparkles(); this.noSteal(); this.music(); this.guestbook(); if (!document.getElementById("splash")) this.popup(6000); }
+    boot: function () { var v2 = document.getElementById("v2"); if (v2) v2.addEventListener("click", function () { try { localStorage.setItem("ver", "2"); } catch (e) {} }); this.fill(); this.countdown(); this.counter(); this.titleScroll(); this.sparkles(); this.noSteal(); this.music(); this.guestbook(); if (!document.getElementById("splash")) this.popup(6000); }
   };
   document.addEventListener("DOMContentLoaded", function () { window.Site.boot(); });
 })();
