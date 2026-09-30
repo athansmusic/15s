@@ -108,11 +108,31 @@
         stop: function () { wantPlay = false; if (P && P.pauseVideo) P.pauseVideo(); }
       };
       if (sp) {
-        sp.addEventListener("click", function () { window.Music.play(); sp.remove(); });
-        var q = document.getElementById("enter-quiet"); if (q) q.addEventListener("click", function (e) { e.preventDefault(); e.stopPropagation(); sp.remove(); });
+        sp.addEventListener("click", function () { window.Music.play(); sp.remove(); window.Site.popup(6000); });
+        var q = document.getElementById("enter-quiet"); if (q) q.addEventListener("click", function (e) { e.preventDefault(); e.stopPropagation(); sp.remove(); window.Site.popup(6000); });
       }
       var st = document.getElementById("mstop"); if (st) st.addEventListener("click", function () { window.Music.stop(); });
       var pl = document.getElementById("mplay"); if (pl) pl.addEventListener("click", function () { window.Music.play(); });
+    },
+
+    // ~~ ADVERTISEMENT ~~ (it's milk) ~~
+    popup: function (delay) {
+      if (document.getElementById("ad")) return;
+      setTimeout(function () {
+        var d = document.createElement("div"); d.id = "ad";
+        d.innerHTML = '<div class="ad-title"><span>Advertisement - Microsoft Internet Explorer</span><button type="button" class="ad-x" title="Close">&times;</button></div>'
+          + '<div class="ad-body"><font size="1" color="#666">~ ADVERTISEMENT ~</font><br>'
+          + '<font size="6" color="#cc0000" face="Impact, Arial Black, sans-serif"><b>MILK</b></font><br>'
+          + '<a href="https://www.target.com/p/organic-valley-whole-milk-1-2gal-64oz/-/A-49174886#lnk=sametab" target="_blank" rel="noopener"><img src="img/milk.jpg" width="180" height="180" alt="milk" border="0"></a><br>'
+          + '<font size="2"><b>You look thirsty.</b></font><br>'
+          + '<a href="https://www.target.com/p/organic-valley-whole-milk-1-2gal-64oz/-/A-49174886#lnk=sametab" target="_blank" rel="noopener"><font size="4" color="#0000ee"><b>&gt;&gt;&gt; CLICK HERE FOR MILK &lt;&lt;&lt;</b></font></a><br>'
+          + '<font size="1" color="#666">(this ad helps fund the plot)</font><br><br>'
+          + '<button type="button" class="ad-no">No thanks, I am lactose intolerant</button></div>';
+        document.body.appendChild(d);
+        function close() { d.remove(); }
+        d.querySelector(".ad-x").addEventListener("click", close);
+        d.querySelector(".ad-no").addEventListener("click", close);
+      }, delay || 0);
     },
 
     guestbook: function () {
@@ -134,7 +154,7 @@
       });
     },
 
-    boot: function () { this.fill(); this.countdown(); this.counter(); this.titleScroll(); this.sparkles(); this.noSteal(); this.music(); this.guestbook(); }
+    boot: function () { this.fill(); this.countdown(); this.counter(); this.titleScroll(); this.sparkles(); this.noSteal(); this.music(); this.guestbook(); if (!document.getElementById("splash")) this.popup(6000); }
   };
   document.addEventListener("DOMContentLoaded", function () { window.Site.boot(); });
 })();
