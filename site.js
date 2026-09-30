@@ -29,18 +29,13 @@
       var r = released(), u = upcoming(), t = r[0];
       var el;
       if ((el = document.getElementById("todays"))) {
-        el.innerHTML = t ? '<img src="img/new.gif" align="absmiddle"> <b><font size="4" color="#ffff00">CASE FILE #' + pad3(t.n) + '</font></b> <font size="1">(' + niceDate(t.date) + ')</font><br>'
+        el.innerHTML = t ? '<img src="img/new.gif" align="absmiddle"> <b><font size="4" color="#ffff00">MYSTERY #' + pad3(t.n) + '</font></b> <font size="1">(' + niceDate(t.date) + ')</font><br>'
           + '<font size="5" class="glitter">' + esc(t.title) + '</font><br><i>' + esc(t.blurb) + '</i><br><br>' + player(t)
           : '<img src="img/q.gif" align="absmiddle"> No mysteries yet!! The first one is coming!!';
       }
-      if ((el = document.getElementById("caselist"))) {
-        el.innerHTML = r.length ? r.map(function (e) {
-          return '<tr><td bgcolor="#000066" align="center"><font color="#ffff00"><b>#' + pad3(e.n) + '</b></font></td><td bgcolor="#000033">' + esc(e.title) + (e.n === t.n ? ' <img src="img/new.gif" align="absmiddle">' : '') + '<br><font size="1" color="#aaaaaa">' + esc(e.blurb) + '</font></td><td bgcolor="#000066" align="center"><font size="1">' + niceDate(e.date) + '</font></td><td bgcolor="#000033" align="center">' + (e.src ? '<a href="' + esc(e.src) + '" target="_blank">listen</a>' : '<font size="1" color="#999">soon</font>') + '</td></tr>';
-        }).join("") : '<tr><td colspan="4" align="center">The filing cabinet is empty (so far)</td></tr>';
-      }
       if ((el = document.getElementById("progress"))) {
         var n = r.length, total = S.seasonEpisodes || 90, pct = Math.min(100, Math.round(n / total * 100));
-        el.innerHTML = '<div class="bar"><div style="width:' + pct + '%"></div></div><font size="1">SEASON ONE: ' + n + ' of ' + total + ' cases solved (' + pct + '%) = ' + (n * 15) + ' seconds of content</font>';
+        el.innerHTML = '<div class="bar"><div style="width:' + pct + '%"></div></div><font size="1">SEASON ONE: ' + n + ' of ' + total + ' mysteries solved (' + pct + '%) = ' + (n * 15) + ' seconds of content</font>';
       }
       if ((el = document.getElementById("nextlabel"))) el.textContent = u.length ? "NEXT MYSTERY IN:" : "NEXT MYSTERY (probably) IN:";
       if ((el = document.getElementById("updated"))) el.textContent = t ? niceDate(t.date) : "never";
@@ -67,7 +62,7 @@
 
     counter: function () {
       var el = document.getElementById("hits"); if (!el) return;
-      var n = 15015; try { var h = parseInt(localStorage.getItem("hits15") || "0", 10) + 1; localStorage.setItem("hits15", String(h)); n += h; } catch (e) {}
+      var n = 15; // we don't know how to track this
       el.innerHTML = String(n).padStart(6, "0").split("").map(function (d) { return '<span class="digit" style="background-position:-' + (d * 14) + 'px 0"></span>'; }).join("");
     },
 

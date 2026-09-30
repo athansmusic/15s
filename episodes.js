@@ -22,7 +22,7 @@ window.LINKS = {
   apple: "",
   youtube: "",
   rss: "",
-  email: "",          // e.g. "crew@example.com" -> becomes the "EMAIL THE WEBMASTER" mailbox
+  email: "comments@whitehouse.gov",   // EMAIL THE WEBMASTER goes here
 };
 
 window.EPISODES = [
