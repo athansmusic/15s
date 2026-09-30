@@ -30,3 +30,5 @@ textarea, input { font-family: "Courier New", monospace; font-size: 12px; }
 .myspace .val { background: #d5e8fb; padding: 3px; }
 img { image-rendering: pixelated; }
 iframe, audio { image-rendering: auto; }
+/* the bg music player stays off-screen (hidden but still playing) */
+#yt, #yt iframe { position: fixed; left: -9999px; top: 0; width: 200px; height: 113px; }
