@@ -31,11 +31,13 @@ Also in `episodes.js`, fill in `LINKS` (Kickstarter, Spotify, Apple, YouTube, RS
 
 ## Snake
 
-Eat 15 in 15 seconds to win. It is tuned to be hard but possible: a 15x15 board, 80ms a step, and new food always lands within 6 steps of the snake's head. Both knobs are at the top of `snake.js`: lower `REACH` to make 15 easier, raise it to make it harder (28 puts food anywhere on the board); a lower `SPEED` is a faster snake. Arrow keys or WASD on a keyboard, swipe on a phone.
+Eat 15 in 15 seconds to win. It is tuned to be hard but possible: a 15x15 board, 80ms a step, and new food always lands within 6 steps of the snake's head. Both knobs are at the top of `snake.js`: lower `REACH` to make 15 easier, raise it to make it harder (28 puts food anywhere on the board); a lower `SPEED` is a faster snake. Arrow keys or WASD on a keyboard, swipe on a phone. Space starts or restarts a game.
+
+Winning flips the whole site: the black becomes the violet and the violet becomes the black. The flip is remembered in the visitor's browser and stays until they win again. The flipped colours are the `html.flip` line in `style.css`.
 
 ## Look
 
-Colours are sampled from the show art and live at the top of `style.css` (`--ink` is the black paper, `--violet` is the 15). `snake.js` repeats the same colours for the canvas. No web fonts.
+Colours are sampled from the show art and live at the top of `style.css` (`--ink` is the black paper, `--violet` is the 15). `snake.js` reads the same colours for the canvas. No web fonts.
 
 ## Files
 

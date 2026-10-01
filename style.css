@@ -1,5 +1,7 @@
 /* 15 Second Mysteries. the colours are sampled from the show art (img/logo.png) */
-:root { --ink: #18070e; --violet: #7a68ff; --lilac: #a79bff; --paper: #f4f1ff; --dim: #a2979d; }
+:root { --ink: #18070e; --violet: #7a68ff; --lilac: #a79bff; --paper: #f4f1ff; --dim: #a2979d; --food: #f4f1ff; }
+/* win at snake and the black and the violet trade places (snake.js adds the class) */
+html.flip { --ink: #7a68ff; --violet: #18070e; --lilac: #18070e; --paper: #000; --dim: #18070e; --food: #fff; }
 * { box-sizing: border-box; }
 html { background: var(--ink); }
 body { margin: 0; color: var(--paper); font: 17px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif; }
