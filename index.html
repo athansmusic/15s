@@ -9,9 +9,7 @@
 <meta property="og:description" content="A podcast. Each episode is 15 seconds.">
 <meta property="og:image" content="img/logo-og.jpg">
 <link rel="icon" href="img/favicon.png">
-<link rel="stylesheet" href="style.css">
-<script>try { if (localStorage.getItem("flip") === "1") document.documentElement.className = "flip"; } catch (e) {}</script>
-<script src="episodes.js"></script>
+<link rel="stylesheet" href="style.css"><script src="episodes.js"></script>
 </head>
 <body>
 <main>
@@ -28,7 +26,7 @@
   <h2>Snake</h2>
   <p class="dim">Eat 15 in 15 seconds.</p>
   <canvas id="snake" width="300" height="300"></canvas>
-  <p class="hud"><span>time: <span id="snake-time">15</span></span> <span>score: <span id="snake-score">0</span></span> <button id="snake-start">play</button></p>
+  <p class="hud"><span>score: <span id="snake-score">0</span></span> <button id="snake-start">play</button></p>
 </main>
 <script>
 (function () {

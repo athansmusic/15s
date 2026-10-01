@@ -33,7 +33,9 @@ Also in `episodes.js`, fill in `LINKS` (Kickstarter, Spotify, Apple, YouTube, RS
 
 Eat 15 in 15 seconds to win. It is tuned to be hard but possible: a 15x15 board, 80ms a step, and new food always lands within 6 steps of the snake's head. Both knobs are at the top of `snake.js`: lower `REACH` to make 15 easier, raise it to make it harder (28 puts food anywhere on the board); a lower `SPEED` is a faster snake. Arrow keys or WASD on a keyboard, swipe on a phone. Space starts or restarts a game.
 
-Winning flips the whole site: the black becomes the violet and the violet becomes the black. The flip is remembered in the visitor's browser and stays until they win again. The flipped colours are the `html.flip` line in `style.css`.
+The clock counts down in milliseconds, huge, behind the game.
+
+Winning flips the whole site: the black becomes the violet and the violet becomes the black, pulsing out from the snake's head in board-sized pixels (browsers without view transitions just switch). It stays until the next win or a refresh. The flipped colours are the `html.flip` line in `style.css`.
 
 ## Look
 
