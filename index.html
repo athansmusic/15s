@@ -19,7 +19,10 @@
   <p class="about">15 Second Mysteries is a fully produced fiction anthology podcast where each episode is a complete, standalone mystery in exactly fifteen seconds: the crime, the investigation, the twist and the solution. Every episode has a new case, new characters and a whole new world, all built with a full cast, original music and detailed sound design.</p>
 
   <h2>Kickstarter</h2>
-  <div class="ks" id="ks"><p class="dim">Launching soon. The goal is $15.</p></div>
+  <div class="ks">
+    <p class="dim" id="ks-note">The goal is $15.</p>
+    <a class="btn" id="ks-btn" aria-disabled="true">Kickstarter launching soon</a>
+  </div>
 
   <h2>Snake</h2>
   <p class="dim">Eat 15 in 15 seconds.</p>
@@ -28,12 +31,20 @@
 </main>
 <script>
 (function () {
-  var url = (window.LINKS || {}).kickstarter;
-  if (!url) return;
-  var a = document.createElement("a");
-  a.className = "btn"; a.href = url; a.target = "_blank"; a.rel = "noopener"; a.textContent = "Back it on Kickstarter";
-  var p = document.createElement("p"); p.className = "dim"; p.textContent = "The goal is $15. That's about five Monster Energy Drinks.";
-  var box = document.getElementById("ks"); box.innerHTML = ""; box.appendChild(p); box.appendChild(a);
+  var K = window.KICKSTARTER || {}, btn = document.getElementById("ks-btn"), note = document.getElementById("ks-note");
+  var goal = "The goal is $" + (K.goal || 15) + ".";
+  if (!K.url) return; // stays as the greyed-out "launching soon" button
+  btn.href = K.url; btn.target = "_blank"; btn.rel = "noopener"; btn.removeAttribute("aria-disabled");
+  // a bare date means local midnight, not UTC
+  var start = K.launch ? new Date(/^\d{4}-\d{2}-\d{2}$/.test(K.launch) ? K.launch + "T00:00:00" : K.launch) : null;
+  if (start && isNaN(start)) start = null;
+  var end = start ? new Date(start) : null, now = new Date();
+  if (end) end.setDate(end.getDate() + (K.days || 15)); // calendar days, so the clock change on Nov 1 can't shift it
+  function day(d) { return d.toLocaleDateString(undefined, { month: "long", day: "numeric" }); }
+  if (!start) { btn.textContent = "See it on Kickstarter"; note.textContent = goal; }
+  else if (now < start) { btn.textContent = "Notify me on Kickstarter"; note.textContent = "Launching " + day(start) + ". " + goal; }
+  else if (now < end) { btn.textContent = "Back it on Kickstarter"; note.textContent = goal + " That's about five Monster Energy Drinks. Ends " + day(end) + "."; }
+  else { btn.textContent = "See it on Kickstarter"; note.textContent = "The campaign has ended. Thank you."; }
 })();
 </script>
 <script src="snake.js"></script>

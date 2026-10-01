@@ -4,9 +4,15 @@ One plain page in the show art's colours: the logo, the show description, a Kick
 
 ## Kickstarter
 
-Paste the campaign URL into `LINKS.kickstarter` in `episodes.js`. The Kickstarter section on the page then shows a "Back it on Kickstarter" button. While it is empty the section just says "Launching soon. The goal is $15."
+The Kickstarter section is a real button. Set it up once in `KICKSTARTER` at the top of `episodes.js`:
 
-The page does not show episodes or the other listen links right now. `EPISODES` and the rest of `LINKS` stay in `episodes.js` so they can come back later.
+- `url`: the campaign's public address. Not the preview link with `?token=` in it. The pre-launch page and the live campaign share this address.
+- `launch`: the launch day as `YYYY-MM-DD`, or an exact time like `2026-10-31T10:00:00-05:00`.
+- `days` and `goal`: campaign length and goal, both 15.
+
+The button then switches by itself: greyed-out "Kickstarter launching soon" with no url, "Notify me on Kickstarter" before launch, "Back it on Kickstarter" during the campaign, and "See it on Kickstarter" once it ends. The line above it shows the launch or end date.
+
+The page does not show episodes or listen links right now. `EPISODES` and `LINKS` stay in `episodes.js` for later.
 
 ## Background music
 
