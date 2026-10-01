@@ -1,29 +1,12 @@
 # 15 Second Mysteries ~ official homepage
 
-One plain page in the show art's colours: the logo, today's episode, where to listen, and a 15-second game of Snake. Plain HTML, CSS and JS, no build step, no framework. Upload the folder anywhere that serves static files (Vercel, Netlify drop, GitHub Pages, Cloudflare Pages).
+One plain page in the show art's colours: the logo, the show description, a Kickstarter link, and a 15-second game of Snake. Plain HTML, CSS and JS, no build step, no framework. Upload the folder anywhere that serves static files (Vercel, Netlify drop, GitHub Pages, Cloudflare Pages).
 
-## Adding today's mystery (the daily job)
+## Kickstarter
 
-Open `episodes.js` and paste a new entry at the TOP of `EPISODES`:
+Paste the campaign URL into `LINKS.kickstarter` in `episodes.js`. The Kickstarter section on the page then shows a "Back it on Kickstarter" button. While it is empty the section just says "Launching soon. The goal is $15."
 
-```js
-{
-  n: 2,
-  date: "2026-10-01",
-  title: "The Case of the ...",
-  blurb: "One line about the case.",
-  src: "https://.../episode.mp3",   // any link to the episode, or ""
-},
-```
-
-- Episodes whose `date` is in the future stay hidden until that day, so you can queue the whole week up in advance.
-- The page shows the newest released episode's title as TODAY'S EPISODE.
-- `src` becomes the LISTEN button. Leave it as `""` and there is no button.
-- `blurb` shows under the title. Leave it as `""` to skip it.
-
-## Links
-
-Also in `episodes.js`, fill in `LINKS` (Kickstarter, Spotify, Apple, YouTube, RSS). Anything left as `""` stays off the page; if they are all empty the page says "coming soon".
+The page does not show episodes or the other listen links right now. `EPISODES` and the rest of `LINKS` stay in `episodes.js` so they can come back later.
 
 ## Background music
 

@@ -18,11 +18,8 @@
   <p class="dim">A podcast. Each episode is 15 seconds.</p>
   <p class="about">15 Second Mysteries is a fully produced fiction anthology podcast where each episode is a complete, standalone mystery in exactly fifteen seconds: the crime, the investigation, the twist and the solution. Every episode has a new case, new characters and a whole new world, all built with a full cast, original music and detailed sound design.</p>
 
-  <h2>Today's episode</h2>
-  <div class="ep" id="ep">none yet</div>
-
-  <h2>Listen</h2>
-  <p class="links" id="links"></p>
+  <h2>Kickstarter</h2>
+  <div class="ks" id="ks"><p class="dim">Launching soon. The goal is $15.</p></div>
 
   <h2>Snake</h2>
   <p class="dim">Eat 15 in 15 seconds.</p>
@@ -31,15 +28,12 @@
 </main>
 <script>
 (function () {
-  function esc(s) { return String(s || "").replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
-  var t = new Date(), today = t.getFullYear() + "-" + String(t.getMonth() + 1).padStart(2, "0") + "-" + String(t.getDate()).padStart(2, "0");
-  var out = (window.EPISODES || []).filter(function (e) { return e.date <= today; }).sort(function (a, b) { return a.date < b.date ? 1 : -1; })[0];
-  if (out) document.getElementById("ep").innerHTML = "<strong>" + esc(out.title) + "</strong>"
-    + (out.blurb ? '<span class="blurb">' + esc(out.blurb) + "</span>" : "")
-    + (out.src ? '<a class="btn" href="' + esc(out.src) + '">Listen</a>' : "");
-  var L = window.LINKS || {}, names = { spotify: "Spotify", apple: "Apple Podcasts", youtube: "YouTube", rss: "RSS", kickstarter: "Kickstarter" }, parts = [];
-  for (var k in names) if (L[k]) parts.push('<a href="' + esc(L[k]) + '">' + names[k] + "</a>");
-  document.getElementById("links").innerHTML = parts.length ? parts.join("") : "coming soon";
+  var url = (window.LINKS || {}).kickstarter;
+  if (!url) return;
+  var a = document.createElement("a");
+  a.className = "btn"; a.href = url; a.target = "_blank"; a.rel = "noopener"; a.textContent = "Back it on Kickstarter";
+  var p = document.createElement("p"); p.className = "dim"; p.textContent = "The goal is $15. That's about five Monster Energy Drinks.";
+  var box = document.getElementById("ks"); box.innerHTML = ""; box.appendChild(p); box.appendChild(a);
 })();
 </script>
 <script src="snake.js"></script>

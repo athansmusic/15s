@@ -8,8 +8,10 @@
 //   YouTube, Spotify, anything). Episodes with a date in the future stay hidden
 //   until that day, so you can queue a bunch up in advance.
 //
-// LINKS: leave any of these as "" and it stays off the page. If they are all
-//   "" the page says "coming soon".
+// LINKS: only "kickstarter" is on the page right now. Paste the campaign URL in
+//   and the Kickstarter section turns into a "Back it on Kickstarter" button.
+//   Until then it says "Launching soon". The episode list below and the other
+//   links are kept for later but not shown.
 
 window.SITE = {
   seasonEpisodes: 90,                   // Season One = 90 cases, exactly 15 seconds each (promise)
