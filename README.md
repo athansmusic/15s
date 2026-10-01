@@ -36,5 +36,6 @@ Colours are sampled from the show art and live at the top of `style.css` (`--ink
 - `404.html` the not-found page (Vercel picks it up automatically; elsewhere, point your host's 404 rule at it)
 - `style.css`, `snake.js`, `bgm.js`, `episodes.js`
 - `img/cover.png` the cover art at the top of the page, used exactly as exported (the marching-ants selection outline is on purpose)
-- `img/logo.png`, `img/logo-og.jpg`, `img/favicon.png` are web-sized copies of `15logo2.png` (the 4 MB original stays out of git)
+- `img/og.png` the 1200x630 link preview image (the cover art centred on black). The preview tags in `index.html` use full `https://www.15.show/` addresses, because most apps ignore relative ones; update them if the domain changes
+- `img/logo.png`, `img/favicon.png` are web-sized copies of `15logo2.png` (the 4 MB original stays out of git)
 - `vercel.json` clean URLs, plus redirects from the old `/v2`, `/guestbook` and `/cases`/`/faq` addresses (with or without `.html`) to the home page
