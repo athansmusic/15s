@@ -10,6 +10,8 @@ body { margin: 0; color: var(--paper); font: 17px/1.5 "Helvetica Neue", Helvetic
 main { max-width: 380px; margin: 0 auto; padding: 48px 20px 64px; }
 
 .art { display: block; width: 72px; height: 72px; margin-bottom: 20px; }
+/* the cover art, marching ants and all (img/cover.png is used exactly as exported) */
+.cover { display: block; width: 100%; height: auto; margin: 0 0 28px; }
 h1 { margin: 0 0 4px; font-size: 26px; line-height: 1.15; }
 h2 { margin: 36px 0 6px; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--lilac); }
 p { margin: 0 0 12px; }
