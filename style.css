@@ -1,41 +1,30 @@
-/* 15 SECOND MYSTERIES ~ official stylesheet ~ do not steal */
-body { font-family: "Comic Sans MS", "Comic Sans", "Chalkboard SE", cursive; font-size: 13px; cursor: crosshair; margin: 0; }
-blink, .blink { animation: blink 1s steps(1) infinite; }
-@keyframes blink { 50% { visibility: hidden; } }
-.rainbow { background: linear-gradient(90deg,#f00,#ff8000,#ff0,#0f0,#0ff,#00f,#f0f,#f00); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: bold; }
-.glitter { color: #fff; text-shadow: 0 0 4px #ff00ff, 0 0 8px #ff00ff, 1px 1px 0 #000; animation: glitter .6s steps(2) infinite; }
-@keyframes glitter { 50% { text-shadow: 0 0 4px #00ffff, 0 0 8px #00ffff, 1px 1px 0 #000; } }
-.wobble { display: inline-block; animation: wobble 1.4s ease-in-out infinite; }
-@keyframes wobble { 0%,100% { transform: rotate(-4deg); } 50% { transform: rotate(4deg); } }
-.box { border: 3px ridge #ff00ff; background: #000033; }
-.box2 { border: 3px outset #cccccc; background: #ccccff; color: #000; }
-.box3 { border: 3px groove #ffff00; background: #330033; }
-.title3d { font-family: Impact, "Arial Black", sans-serif; font-size: 44px; letter-spacing: 1px; color: #ffff00;
-  text-shadow: 2px 2px 0 #ff00ff, 4px 4px 0 #0000ff, 6px 6px 0 #00ffff, 8px 8px 0 #000; }
-.spark { position: fixed; pointer-events: none; font-size: 12px; z-index: 9999; animation: spark 1s linear forwards; }
-@keyframes spark { to { transform: translateY(40px); opacity: 0; } }
-#splash { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #000 url(img/stars.gif); z-index: 10000; display: flex; align-items: center; justify-content: center; text-align: center; cursor: pointer; }
-#splash td { padding: 6px; }
-.digit { display: inline-block; width: 14px; height: 20px; background: url(img/digits.gif) no-repeat; image-rendering: pixelated; }
-.bar { width: 100%; height: 14px; border: 2px inset #999; background: #000; }
-.bar div { height: 14px; background: repeating-linear-gradient(90deg,#00ff00 0 6px,#008800 6px 8px); }
-a { text-decoration: underline; }
-a:hover { background: #ffff00; color: #000; }
-textarea, input { font-family: "Courier New", monospace; font-size: 12px; }
-.nav a { display: block; color: #ffff00; font-weight: bold; padding: 2px 0; }
-.nav a:before { content: "\00BB  "; }
-.myspace td { font-family: Verdana, Arial, sans-serif; font-size: 11px; }
-.myspace .hd { background: #6699cc; color: #fff; font-weight: bold; padding: 2px 4px; }
-.myspace .lb { background: #b1d0f0; padding: 3px; color: #336699; font-weight: bold; }
-.myspace .val { background: #d5e8fb; padding: 3px; }
-img { image-rendering: pixelated; }
-iframe, audio { image-rendering: auto; }
-/* the bg music player stays off-screen (hidden but still playing) */
-#yt, #yt iframe { position: fixed; left: -9999px; top: 0; width: 200px; height: 113px; }
-/* ~~ the milk ad ~~ */
-#ad { position: fixed; top: 110px; left: 50%; margin-left: -20px; width: 300px; z-index: 9998; background: #c0c0c0; color: #000; border: 2px outset #fff; box-shadow: 4px 4px 0 #000; font-family: Tahoma, "MS Sans Serif", Arial, sans-serif; font-size: 11px; animation: adpop .35s steps(4); }
-@keyframes adpop { from { transform: scale(.2) rotate(-20deg); } to { transform: none; } }
-#ad .ad-title { background: linear-gradient(90deg, #000080, #1084d0); color: #fff; font-weight: bold; padding: 3px 4px; display: flex; justify-content: space-between; align-items: center; }
-#ad .ad-x { width: 16px; height: 14px; line-height: 10px; font-size: 11px; font-weight: bold; padding: 0; background: #c0c0c0; color: #000; border: 2px outset #fff; cursor: pointer; }
-#ad .ad-body { padding: 10px; text-align: center; background: #fff; margin: 4px; border: 2px inset #999; }
-#ad .ad-no { font-size: 10px; background: #c0c0c0; border: 2px outset #fff; cursor: pointer; }
+/* 15 Second Mysteries. the colours are sampled from the show art (img/logo.png) */
+:root { --ink: #18070e; --violet: #7a68ff; --lilac: #a79bff; --paper: #f4f1ff; --dim: #a2979d; }
+* { box-sizing: border-box; }
+html { background: var(--ink); }
+body { margin: 0; color: var(--paper); font: 17px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif; }
+main { max-width: 380px; margin: 0 auto; padding: 48px 20px 64px; }
+
+.art { display: block; width: 72px; height: 72px; margin-bottom: 20px; }
+h1 { margin: 0 0 4px; font-size: 26px; line-height: 1.15; }
+h2 { margin: 36px 0 6px; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--lilac); }
+p { margin: 0 0 12px; }
+a { color: var(--lilac); }
+:focus-visible { outline: 3px solid var(--paper); outline-offset: 2px; }
+.dim, .links { color: var(--dim); }
+
+.ep .no { display: block; font-size: 14px; color: var(--dim); }
+.ep strong { display: block; font-size: 20px; line-height: 1.25; overflow-wrap: anywhere; }
+.ep .blurb { display: block; margin-top: 4px; }
+.ep .btn { margin-top: 12px; }
+
+.btn, button { display: inline-block; border: 0; padding: 10px 18px; background: var(--violet); color: var(--ink); font: 700 14px/1 "Helvetica Neue", Helvetica, Arial, sans-serif; text-decoration: none; cursor: pointer; }
+.btn:hover, button:hover { background: var(--paper); }
+button:disabled { opacity: .4; cursor: default; background: var(--violet); }
+
+.links a { margin-right: 14px; }
+
+#snake { display: block; width: 300px; max-width: 100%; margin-top: 10px; border: 2px solid var(--violet); touch-action: none; }
+.hud { display: flex; align-items: center; gap: 18px; margin-top: 12px; font-variant-numeric: tabular-nums; }
+
+.count { font-size: 48px; font-weight: 700; line-height: 1; color: var(--violet); }

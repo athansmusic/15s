@@ -4,16 +4,16 @@
 //
 // HOW TO ADD TODAY'S MYSTERY:
 //   Copy the top entry, paste it above it, bump "n", set "date" (YYYY-MM-DD),
-//   the title, a one-line blurb, and "src" (an .mp3 link, OR a YouTube link,
-//   OR a Spotify episode link). Episodes with a date in the future stay hidden
+//   the title, a one-line blurb, and "src" (a link to the episode: an .mp3,
+//   YouTube, Spotify, anything). Episodes with a date in the future stay hidden
 //   until that day, so you can queue a bunch up in advance.
 //
-// LINKS: leave any of these as "" and the site shows "(coming soon!!)" instead.
+// LINKS: leave any of these as "" and it stays off the page. If they are all
+//   "" the page says "coming soon".
 
 window.SITE = {
   seasonEpisodes: 90,                   // Season One = 90 cases, exactly 15 seconds each (promise)
   bgMusicYouTubeId: "U4gkWzrNORA",      // Computer Fan Ambient Noise ( 1 Hour ), looped forever
-  bgMusicLabel: "computer_fan_ambient_noise_1_hour.mid",
 };
 
 window.LINKS = {
@@ -22,7 +22,6 @@ window.LINKS = {
   apple: "",
   youtube: "",
   rss: "",
-  email: "comments@whitehouse.gov",   // EMAIL THE WEBMASTER goes here
 };
 
 window.EPISODES = [

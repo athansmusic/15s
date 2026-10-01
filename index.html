@@ -1,185 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=800">
-<title>*~* 15 SECOND MYSTERIES *~* OFFICIAL HOMEPAGE *~*</title>
-<meta name="description" content="15 Second Mysteries: a fully produced fiction anthology podcast where every episode is a complete mystery in exactly fifteen seconds. A NEW MYSTERY EVERY DAY!!!">
-<meta name="keywords" content="15 second mysteries, mystery, podcast, anthology, fifteen seconds, crime, twist, hush studios">
-<meta property="og:title" content="15 Second Mysteries ~ Official Homepage">
-<meta property="og:description" content="The most efficient storytelling you'll ever hear. A new 15 second mystery every single day.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>15 Second Mysteries</title>
+<meta name="description" content="15 Second Mysteries: a fiction anthology podcast where every episode is a complete mystery in exactly fifteen seconds. A new one every day.">
+<meta property="og:title" content="15 Second Mysteries">
+<meta property="og:description" content="A podcast. Each episode is 15 seconds.">
 <meta property="og:image" content="img/logo-og.jpg">
 <link rel="icon" href="img/favicon.png">
-<script>try { if (localStorage.getItem("ver") === "2") location.replace("v2.html"); } catch (e) {}</script>
 <link rel="stylesheet" href="style.css">
 <script src="episodes.js"></script>
-<script src="site.js"></script>
 </head>
-<body background="img/stars.gif" bgcolor="#000010" text="#ffffff" link="#00ffff" vlink="#ff00ff" alink="#ffff00">
+<body>
+<main>
+  <img class="art" src="img/logo.png" width="72" height="72" alt="15 Second Mysteries show art">
+  <h1>15 Second Mysteries</h1>
+  <p class="dim">A podcast. Each episode is 15 seconds.</p>
 
-<!-- ~~~~~~~~ SPLASH PAGE (click to enter) ~~~~~~~~ -->
-<div id="splash">
-  <table cellpadding="10" class="box">
-    <tr><td align="center">
-      <img src="img/logo.png" width="160" height="160" alt="15" class="wobble"><br>
-      <span class="title3d">15 SECOND MYSTERIES</span><br><br>
-      <font size="5" color="#ffff00" class="blink">>>> CLICK ANYWHERE TO ENTER <<<</font><br><br>
-      <font size="2" color="#00ff00">!! TURN YOUR SPEAKERS UP !!<br>this site contains MUSIC</font><br><br>
-      <font size="1" color="#aaaaaa">loading time on 56k: approx 15 seconds</font><br><br>
-      <font size="1"><a href="#" id="enter-quiet" style="color:#999">(enter without music, coward)</a></font>
-    </td></tr>
-  </table>
-</div>
+  <h2>Today's episode</h2>
+  <div class="ep" id="ep">none yet</div>
 
-<div style="position:fixed;top:0;left:0;z-index:10001;background:#ff0;color:#000;padding:6px 12px;border:3px solid #000;font:bold 14px Arial,sans-serif">YOU ARE ON V1 &nbsp;<a href="v2.html" id="v2" style="color:#00e">&raquo; SWITCH TO V2 &laquo;</a></div>
-<center>
-<br>
-<img src="img/construction.gif" alt="UNDER CONSTRUCTION"> &nbsp; <img src="img/construction.gif" alt="UNDER CONSTRUCTION">
-<br>
-<table cellpadding="4"><tr valign="middle">
-  <td><img src="img/logo.png" width="120" height="120" alt="15"></td>
-  <td align="center"><span class="title3d">15 SECOND MYSTERIES</span><br>
-  <font size="3" class="rainbow">~*~*~ THE OFFICIAL HOMEPAGE ~*~*~</font></td>
-  <td><img src="img/logo.png" width="120" height="120" alt="15" style="transform:scaleX(-1)"></td>
-</tr></table>
-<img src="img/flame.gif"><img src="img/flame.gif"> <font size="4" color="#ffff00"><span class="blink">A NEW MYSTERY EVERY SINGLE DAY!!!</span></font> <img src="img/flame.gif"><img src="img/flame.gif">
-<br><br>
-<marquee behavior="scroll" direction="left" scrollamount="6" width="760" bgcolor="#000066" style="border:2px dashed #ff00ff"><font color="#00ff00" size="3">&nbsp; WELCOME to the OFFICIAL 15 SECOND MYSTERIES homepage!!! &nbsp; ★ &nbsp; Every episode is a COMPLETE mystery in EXACTLY fifteen seconds: the crime, the investigation, the twist AND the solution!!! &nbsp; ★ &nbsp; Full cast! Original music! Sound design! &nbsp; ★ &nbsp; Season One = 90 episodes = 22 minutes 30 seconds of PURE CONTENT &nbsp; ★ &nbsp; SIGN THE GUESTBOOK!!! &nbsp; ★ &nbsp; This site is UNDER CONSTRUCTION (forever) &nbsp; ★ &nbsp; 100% HUMAN MADE, NO AI &nbsp; ★ &nbsp;</font></marquee>
-<img src="img/rainbow.gif" width="760" height="6"><br><br>
+  <h2>Listen</h2>
+  <p class="links" id="links"></p>
 
-<table width="760" cellpadding="6" cellspacing="0" border="0">
-<tr valign="top">
-
-<!-- ~~~~~~~~ LEFT SIDEBAR ~~~~~~~~ -->
-<td width="190" background="img/marble.gif" style="border:3px ridge #6666ff">
-  <center><font size="4" color="#ffff00"><b>~ NAVIGATE ~</b></font></center>
-  <div class="nav">
-    <a href="index.html">HOME</a>
-    <a href="guestbook.html">SIGN MY GUESTBOOK</a>
-    <a href="#" id="kslink" target="_blank">THE KICKSTARTER</a>
-    <a href="#listen">WHERE TO LISTEN</a>
-    <a href="#linkus">LINK TO US</a>
-  </div>
-  <br>
-  <center>
-  <table width="100%" cellpadding="3" class="box3"><tr><td align="center">
-    <font size="2" color="#00ff00"><b>♪ BACKGROUND MUSIC ♪</b></font><br>
-    <font size="1" color="#ffffff">now playing:<br><i id="mlabel">bgmusic.mid</i></font><br>
-    <div style="position:fixed;left:-9999px;top:0;width:200px;height:113px;overflow:hidden"><div id="yt"></div></div>
-    <font size="1" color="#cccccc">[<span id="mstate">LOADING</span>]</font><br>
-    <button id="mplay" style="font-size:10px">&#9654; PLAY</button> <button id="mstop" style="font-size:10px">&#9632; STOP</button><br>
-    <font size="1" color="#aaaaaa">(loops forever. you're welcome)</font>
-  </td></tr></table>
-  <br>
-  <font size="2"><b>YOU ARE VISITOR #</b></font><br>
-  <span id="hits"></span><br>
-  <font size="1">(we don't know how to track this so probably 15 i'd guess)</font>
-  <br><br>
-  <span id="email"></span>
-  <br><br>
-  <font size="1">Last updated:<br><b id="updated"></b></font>
-  </center>
-</td>
-
-<!-- ~~~~~~~~ MAIN CONTENT ~~~~~~~~ -->
-<td>
-  <table width="100%" cellpadding="8" class="box"><tr><td>
-    <font size="3"><b>Hi!!! Welcome to my homepage!!!</b></font> <img src="img/q.gif" align="absmiddle"><br>
-    This is the OFFICIAL website of <b><font color="#ffff00">15 Second Mysteries</font></b>, the most efficient storytelling you'll ever hear.
-    It's a fully produced fiction anthology podcast where each episode is a complete, standalone mystery in <b>exactly fifteen seconds</b>:
-    the crime, the investigation, the twist and the solution. New case, new characters, whole new world, every single day.
-    Full cast!! Original music!! Detailed sound design!! <font size="1">(please sign the guestbook)</font>
-  </td></tr></table>
-  <br>
-
-  <!-- TODAY'S MYSTERY -->
-  <table width="100%" cellpadding="10" cellspacing="0" border="4" bordercolor="#ffff00" bgcolor="#220022">
-  <tr><td align="center">
-    <img src="img/magnify.gif" align="absmiddle"> <font size="6" color="#ff00ff"><b>TODAY'S MYSTERY</b></font> <img src="img/magnify.gif" align="absmiddle"><br>
-    <font size="1" color="#aaaaaa">(runtime: 15 seconds. no more. no less. we promise.)</font>
-    <hr size="2" color="#ff00ff">
-    <div id="todays"></div>
-    <hr size="2" color="#ff00ff">
-    <font size="2" color="#00ff00"><b id="nextlabel">NEXT MYSTERY IN:</b></font> <font size="5" color="#00ff00" face="Courier New"><b id="countdown">--:--:--</b></font>
-    <br><br>
-    <div id="progress"></div>
-  </td></tr></table>
-  <br>
-
-  <!-- MYSPACE PROFILE -->
-  <table width="100%" cellpadding="0" cellspacing="0" class="myspace" bgcolor="#ffffff" style="border:1px solid #6699cc; color:#000">
-  <tr><td class="hd" colspan="2">15 Second Mysteries's Profile &nbsp;<font size="1">(Online Now!)</font></td></tr>
-  <tr><td width="45%" valign="top" style="padding:6px">
-    <table width="100%" cellpadding="2" cellspacing="1">
-      <tr><td class="lb">Name:</td><td class="val">15 Second Mysteries</td></tr>
-      <tr><td class="lb">Age:</td><td class="val">15 seconds</td></tr>
-      <tr><td class="lb">Location:</td><td class="val">speed</td></tr>
-      <tr><td class="lb">Mood:</td><td class="val">fast as fuck</td></tr>
-      <tr><td class="lb">Listening to:</td><td class="val">15 Second Mysteries (obviously)</td></tr>
-      <tr><td class="lb">Last Login:</td><td class="val">Today</td></tr>
-      <tr><td class="lb">Runtime:</td><td class="val">Season 1 = 22 min 30 sec</td></tr>
-    </table>
-  </td>
-  <td valign="top" style="padding:6px">
-    <table width="100%" cellpadding="2" cellspacing="1">
-      <tr><td class="hd">15 Second Mysteries's Interests</td></tr>
-      <tr><td class="val">Anything quick. Energy Drinks. Ads. Naps.</td></tr>
-    </table>
-    <br>
-    <center><img src="img/logo.png" width="100" height="100" alt="15"></center>
-  </td></tr>
-  <tr><td class="hd" colspan="2">Comments &nbsp;<font size="1">(<a href="guestbook.html" style="color:#fff">thanks for the add!!</a>)</font></td></tr>
-  </table>
-  <br>
-
-  <!-- WHERE TO LISTEN -->
-  <a name="listen"></a>
-  <table width="100%" cellpadding="8" class="box"><tr><td>
-    <font size="4" color="#ffff00"><b>WHERE TO LISTEN</b></font> <img src="img/new.gif" align="absmiddle"><br>
-    <ul>
-      <li><span id="link-spotify">Spotify</span></li>
-      <li><span id="link-apple">Apple Podcasts</span></li>
-      <li><span id="link-youtube">YouTube</span></li>
-      <li><span id="link-rss">RSS Feed (for your podcatcher)</span></li>
-      <li><span id="link-kickstarter">The Kickstarter</span> <font size="1">(please do NOT back this unless it is absolutely disposable income)</font></li>
-    </ul>
-    <font size="1" color="#aaaaaa">Each episode is exactly 15 seconds, so buffering will take longer than the show. That is the RealPlayer experience and we honor it.</font>
-  </td></tr></table>
-  <br>
-
-  <!-- THE COMMERCIAL EPISODES -->
-  <table width="100%" cellpadding="8" class="box2"><tr><td>
-    <font size="3"><b>!! TWICE A WEEK: FIND THE PLOT INSIDE THE ADS !!</b></font><br>
-    Sometimes you get a little tired of the plot breaking up the commercials; we understand that. So, twice a week, we'll have an episode where you actually have to find the plot within the ads.
-    We think that's funny, and it also helps the people involved fund their creative endeavors to bring about more content.
-  </td></tr></table>
-  <br>
-
-  <!-- LINK TO US -->
-  <a name="linkus"></a>
-  <table width="100%" cellpadding="8" class="box3"><tr><td align="center">
-    <font size="3" color="#ffff00"><b>LINK TO US!!</b></font><br>
-    <img src="img/b_15.gif" alt="15 Second Mysteries"><br>
-    <font size="1">copy this HTML onto your homepage:</font><br>
-    <textarea rows="2" cols="60" readonly onclick="this.select()">&lt;a href="https://YOUR-URL-HERE/"&gt;&lt;img src="https://YOUR-URL-HERE/img/b_15.gif" alt="15 Second Mysteries" border="0"&gt;&lt;/a&gt;</textarea>
-  </td></tr></table>
-  <br>
-
-  <center>
-  <font size="2" color="#ff0000"><b>WE WILL NOT BE USING GENERATIVE AI TO CREATE ANY OF THE CONTENT IN THIS SHOW.</b></font>
-  </center>
-</td>
-</tr>
-</table>
-
-<br>
-<img src="img/rainbow.gif" width="760" height="6"><br>
-<font size="1" color="#999999">
-&copy; 2026 15 Second Mysteries. All 15 seconds reserved. This page is Y2K compliant.<br>
-<b>DO NOT STEAL MY GIFS</b><br>
-<a href="index.html">home</a> | <a href="guestbook.html">guestbook</a>
-</font>
-<br><br>
-</center>
+  <h2>Snake</h2>
+  <p class="dim">Eat 15 in 15 seconds.</p>
+  <canvas id="snake" width="300" height="300"></canvas>
+  <p class="hud"><span>time: <span id="snake-time">15</span></span> <span>score: <span id="snake-score">0</span></span> <button id="snake-start">play</button></p>
+</main>
+<script>
+(function () {
+  function esc(s) { return String(s || "").replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  var t = new Date(), today = t.getFullYear() + "-" + String(t.getMonth() + 1).padStart(2, "0") + "-" + String(t.getDate()).padStart(2, "0");
+  var out = (window.EPISODES || []).filter(function (e) { return e.date <= today; }).sort(function (a, b) { return a.date < b.date ? 1 : -1; })[0];
+  var total = (window.SITE || {}).seasonEpisodes;
+  function niceDate(iso) { var p = iso.split("-"), m = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]; return m[+p[1] - 1] + " " + (+p[2]); }
+  if (out) document.getElementById("ep").innerHTML = "<strong>" + esc(out.title) + '</strong><span class="no">No. ' + esc(out.n) + (total ? " of " + esc(total) : "") + " &middot; " + esc(niceDate(out.date)) + "</span>"
+    + (out.blurb ? '<span class="blurb">' + esc(out.blurb) + "</span>" : "")
+    + (out.src ? '<a class="btn" href="' + esc(out.src) + '">Listen</a>' : "");
+  var L = window.LINKS || {}, names = { spotify: "Spotify", apple: "Apple Podcasts", youtube: "YouTube", rss: "RSS", kickstarter: "Kickstarter" }, parts = [];
+  for (var k in names) if (L[k]) parts.push('<a href="' + esc(L[k]) + '">' + names[k] + "</a>");
+  document.getElementById("links").innerHTML = parts.length ? parts.join("") : "coming soon";
+})();
+</script>
+<script src="snake.js"></script>
+<script src="bgm.js"></script>
 </body>
 </html>
