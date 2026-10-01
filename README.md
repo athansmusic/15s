@@ -46,4 +46,5 @@ Colours are sampled from the show art and live at the top of `style.css` (`--ink
 - `index.html` the page
 - `404.html` the not-found page (Vercel picks it up automatically; elsewhere, point your host's 404 rule at it)
 - `style.css`, `snake.js`, `bgm.js`, `episodes.js`
-- `img/logo.png`, `img/logo-og.jpg`, `img/favicon.png` are web-sized copies of `15logo2.png` (the 4 MB original stays out of git)- `vercel.json` clean URLs, plus redirects from the old `/v2` and `/guestbook` addresses to the home page
+- `img/logo.png`, `img/logo-og.jpg`, `img/favicon.png` are web-sized copies of `15logo2.png` (the 4 MB original stays out of git)
+- `vercel.json` clean URLs, plus redirects from the old `/v2`, `/guestbook` and `/cases`/`/faq` addresses (with or without `.html`) to the home page

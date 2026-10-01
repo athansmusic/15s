@@ -16,6 +16,7 @@ p { margin: 0 0 12px; }
 a { color: var(--lilac); }
 :focus-visible { outline: 3px solid var(--paper); outline-offset: 2px; }
 .dim, .links { color: var(--dim); }
+.about { margin-top: 20px; font-size: 15px; }
 
 .ep .no { display: block; font-size: 14px; color: var(--dim); }
 .ep strong { display: block; font-size: 20px; line-height: 1.25; overflow-wrap: anywhere; }
