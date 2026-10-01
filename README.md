@@ -17,7 +17,7 @@ Open `episodes.js` and paste a new entry at the TOP of `EPISODES`:
 ```
 
 - Episodes whose `date` is in the future stay hidden until that day, so you can queue the whole week up in advance.
-- The page shows the newest released episode as TODAY'S EPISODE, numbered against `SITE.seasonEpisodes` (90).
+- The page shows the newest released episode's title as TODAY'S EPISODE.
 - `src` becomes the LISTEN button. Leave it as `""` and there is no button.
 - `blurb` shows under the title. Leave it as `""` to skip it.
 

@@ -34,9 +34,7 @@
   function esc(s) { return String(s || "").replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   var t = new Date(), today = t.getFullYear() + "-" + String(t.getMonth() + 1).padStart(2, "0") + "-" + String(t.getDate()).padStart(2, "0");
   var out = (window.EPISODES || []).filter(function (e) { return e.date <= today; }).sort(function (a, b) { return a.date < b.date ? 1 : -1; })[0];
-  var total = (window.SITE || {}).seasonEpisodes;
-  function niceDate(iso) { var p = iso.split("-"), m = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]; return m[+p[1] - 1] + " " + (+p[2]); }
-  if (out) document.getElementById("ep").innerHTML = "<strong>" + esc(out.title) + '</strong><span class="no">No. ' + esc(out.n) + (total ? " of " + esc(total) : "") + " &middot; " + esc(niceDate(out.date)) + "</span>"
+  if (out) document.getElementById("ep").innerHTML = "<strong>" + esc(out.title) + "</strong>"
     + (out.blurb ? '<span class="blurb">' + esc(out.blurb) + "</span>" : "")
     + (out.src ? '<a class="btn" href="' + esc(out.src) + '">Listen</a>' : "");
   var L = window.LINKS || {}, names = { spotify: "Spotify", apple: "Apple Podcasts", youtube: "YouTube", rss: "RSS", kickstarter: "Kickstarter" }, parts = [];
